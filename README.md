@@ -1,3 +1,2 @@
 # hangman
 
-test
