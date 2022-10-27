@@ -1,5 +1,5 @@
 # hangman
-Tasks implemented as prompted. Find in `milestore_2.py`
+Tasks implemented as prompted. Find in `milestone_2.py`, `milestone_3.py`.
 
 ------
 *Note*
