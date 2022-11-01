@@ -1,6 +1,8 @@
 # hangman
-Tasks implemented as prompted. Find in `milestone_2.py`, `milestone_3.py`.
+Tasks implemented as prompted. Find in `milestone_2.py`, `milestone_3.py`, `milestone_4.py`.
+
+*Note: comments (where appropriate) are provided for the details of implementaion in each of the milestone files.*
 
 ------
-*Note*
-Tutorial for Practicals in *Prerequists for Task 2, Imports and Context Managers* is not clear enough and can be confusing. 
+
+
