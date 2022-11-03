@@ -10,8 +10,8 @@ while True:
 ####################################################################################################
 # Task 2
 
-secret_word = "apple"
-if guess in secret_word:
+word = "apple"
+if guess in word:
     print(f"Good guess! {guess} is in the word.")
 else:
     print(f"Sorry, {guess} is not in the word. Try again.")
@@ -27,7 +27,7 @@ def check_guess(guess):
     If the letter is not in the secret word, it prints "Sorry, {guess} is not in the word. Try again."
     '''
     guess.lower()
-    if guess in secret_word:
+    if guess in word:
         print(f"Good guess! {guess} is in the word.")
     else:
         print(f"Sorry, {guess} is not in the word. Try again.")
