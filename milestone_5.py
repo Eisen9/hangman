@@ -21,6 +21,7 @@ class Hangman:
     Methods:
         check_guess: checks if the guess is in the word and updates the word_guessed
         ask_for_input: asks the user for a letter and calls the check_guess method
+        play_game: plays the game by instantiating the Hangman class and checking the conditions to end the game
 
     '''
 
@@ -34,8 +35,8 @@ class Hangman:
 
     def check_guess(self, guess):
         '''
-        This function checks if the letters is in the word. 
-        If the letters is in the word, it replaces the "_" with the letter in the word_guessed.
+        This function checks if the letter is in the word. 
+        If the letter is in the word, it replaces the "_" with the letter in the word_guessed.
         If the letter is not in the word, it subtracts 1 from the number of lives.
 
         Parameters: 
@@ -85,7 +86,7 @@ class Hangman:
 def play_game(word_list):  # function -- this is like being external to the class
     '''
     This function plays the game.
-    if the number of lives is 0, that means that the has lost the game.
+    if the number of lives is 0, that means that the user has lost the game.
     if the number of lettters is greater than 0, keep asking the user for the input
     if the number of lives is not 0 and the number of letters is not greater than 0, that means that the user has won the game.
 
