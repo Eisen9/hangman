@@ -101,7 +101,7 @@ def play_game(word_list):  # function -- this is like being external to the clas
         elif game.num_letters > 0:
             game.ask_for_input()
         else:
-            print("You won!")
+            print("Congratulations. You won the game!")
             break
 
 
