@@ -2,12 +2,20 @@ import random
 word_list = ['apple', 'orange', 'kiwi', 'pineapple', 'cherry']
 # print(word_list)
 
+
 word = random.choice(word_list)
 # print(word)
+
+
+guess = input("Enter a single letter: ")
+if guess in word:
+    print(f"Good guess!{guess} is in {word}")
+else:
+    print(f"Sorry, {guess} is not in {word}")
+    
 ############################################################
 # TASK 4
 
-guess = input("Enter a single letter: ")
 if len(guess) == 1 and guess.isalpha():
     print("Good guess!")
 else:
