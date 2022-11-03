@@ -49,6 +49,7 @@ If the letter is valid, it calls the check_guess method.
 In this milestone, we create a Hangman class. Details of the class:
 
  '''
+
     Hangman is a game where the user has to guess a word by guessing the letters in the word.
     The game is over when the number of lives is 0 or the number of letters left to guess is 0.
 
@@ -75,13 +76,18 @@ In this milestone, we create a Hangman class. Details of the class:
 ### Milestone 5
 This milestone is a continuation of milestone_4 with the addidtion of the following function:
 `play_game`. Details of function:
-This function plays the game.
+
+'''
+
+    This function plays the game.
     if the number of lives is 0, that means that the has lost the game.
     if the number of lettters is greater than 0, keep asking the user for the input
     if the number of lives is not 0 and the number of letters is not greater than 0, that means that the user has won the game.
 
     Parameters:
         @param word_list: a list of words to choose from
+
+'''
 
 
 
