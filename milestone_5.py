@@ -1,5 +1,6 @@
 import random
 
+
 class Hangman:
     '''
     Hangman is a game where the user has to guess a word by guessing the letters in the word.
@@ -22,21 +23,21 @@ class Hangman:
         ask_for_input: asks the user for a letter and calls the check_guess method
 
     '''
-    def __init__(self, word_list, num_lives=5):
+
+    def __init__(self, word_list, number_of_lives=5):
         self.word = random.choice(word_list)
         self.word_guessed = ["_" for _ in self.word]
         self.num_letters = len(set(self.word))
-        self.num_lives = num_lives
+        self.number_of_lives = number_of_lives
         self.word_list = word_list
         self.list_of_guesses = []
 
     def check_guess(self, guess):
-
         '''
         This function checks if the letters is in the word. 
         If the letters is in the word, it replaces the "_" with the letter in the word_guessed.
         If the letter is not in the word, it subtracts 1 from the number of lives.
-        
+
         Parameters: 
             @param guess: the letter guessed by the user
         '''
@@ -51,19 +52,15 @@ class Hangman:
                 if letter == guess:
                     # Replace the "_" with letter in the word_guessed
                     self.word_guessed[i] = letter
-                    
+
             self.num_letters -= 1
-            
 
-        else: 
-            self.num_lives -= 1
+        else:
+            self.number_of_lives -= 1
             print(f"Sorry, {guess} is not in the word.")
-            print(f"You have {self.num_lives} lives left.")
+            print(f"You have {self.number_of_lives} lives left.")
             print(f"word guessed: {self.word_guessed}")
-            
-            
 
-    
     def ask_for_input(self):
         '''
         This function asks the user for a letter.
@@ -73,17 +70,19 @@ class Hangman:
         '''
         while True:
             guess = input("Guess the letter: ")
-            if guess.isalpha() != 1: 
+            if guess.isalpha() != 1:
                 print("Invalid letter. Please, enter a single alphabetical character.")
             elif guess in self.list_of_guesses:
                 print("You already tried that letter!")
             else:
                 # handle the logic here
                 self.check_guess(guess)
-                self.list_of_guesses.append(guess) # add the guess to the list of guesses
+                # add the guess to the list of guesses
+                self.list_of_guesses.append(guess)
                 break
 
-def play_game(word_list): # function -- this is like being external to the class
+
+def play_game(word_list):  # function -- this is like being external to the class
     '''
     This function plays the game.
     if the number of lives is 0, that means that the has lost the game.
@@ -93,10 +92,10 @@ def play_game(word_list): # function -- this is like being external to the class
     Parameters:
         @param word_list: a list of words to choose from
     '''
-    game = Hangman(word_list, num_lives=5)
+    game = Hangman(word_list, number_of_lives=5)
     while True:
         # print(f"debugging: {game.num_letters}, and {game.num_lives}")
-        if game.num_lives == 0:
+        if game.number_of_lives == 0:
             print("You lost!")
             break
         elif game.num_letters > 0:
@@ -105,8 +104,8 @@ def play_game(word_list): # function -- this is like being external to the class
             print("You won!")
             break
 
-# Create a list of words and pass it to the Hangman class
-# Call the play_game method                
-word_list = ['apple', 'peach', 'cherry']
-play_game(word_list) # this is just a function 
 
+# Create a list of words and pass it to the Hangman class
+# Call the play_game method
+word_list = ['apple', 'peach', 'cherry']
+play_game(word_list)  # this is just a function
