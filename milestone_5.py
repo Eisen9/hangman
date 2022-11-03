@@ -24,11 +24,11 @@ class Hangman:
 
     '''
 
-    def __init__(self, word_list, number_of_lives=5):
+    def __init__(self, word_list, num_lives=5):
         self.word = random.choice(word_list)
         self.word_guessed = ["_" for _ in self.word]
         self.num_letters = len(set(self.word))
-        self.number_of_lives = number_of_lives
+        self.number_of_lives = num_lives
         self.word_list = word_list
         self.list_of_guesses = []
 
@@ -92,7 +92,7 @@ def play_game(word_list):  # function -- this is like being external to the clas
     Parameters:
         @param word_list: a list of words to choose from
     '''
-    game = Hangman(word_list, number_of_lives=5)
+    game = Hangman(word_list, num_lives=5)
     while True:
         # print(f"debugging: {game.num_letters}, and {game.num_lives}")
         if game.number_of_lives == 0:
