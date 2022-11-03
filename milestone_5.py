@@ -44,7 +44,7 @@ class Hangman:
         guess = guess.lower()
         # Create an if statement that checks if the guess is in the word.
         if guess in self.word:
-            print(f"Good guess {guess} is in the word")
+            print(f"Good guess! {guess} is in the word.")
             # Create a for loop that loops through each letter in the word
             for i, letter in enumerate(self.word):
                 # Create an if statement that checks if the letter is equal to the guess

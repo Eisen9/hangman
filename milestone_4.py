@@ -46,11 +46,11 @@ class Hangman:
         if guess in self.word:
             print(f"Good guess! {guess} is in the word.")
             # Create a for loop that loops through each letter in the word
-            for letter in self.word:
+            for i, letter in enumerate(self.word):
                 # Create an if statement that checks if the letter is equal to the guess
                 if letter == guess:
                     # Replace the "_" with letter in the word_guessed
-                    self.word_guessed = letter
+                    self.word_guessed[i] = letter
             self.num_letters -= 1
 
         else: 
@@ -79,6 +79,7 @@ class Hangman:
                 # handle the logic here
                 self.check_guess(guess)
                 self.list_of_guesses.append(guess) # add the guess to the list of guesses
+                break
                 
 
 
