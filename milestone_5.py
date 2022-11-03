@@ -42,24 +42,26 @@ class Hangman:
         '''
 
         guess = guess.lower()
-        # Create an if statement that checks if the guess is in the word
+        # Create an if statement that checks if the guess is in the word.
         if guess in self.word:
             print(f"Good guess {guess} is in the word")
             # Create a for loop that loops through each letter in the word
-            for letter in self.word:
+            for i, letter in enumerate(self.word):
                 # Create an if statement that checks if the letter is equal to the guess
                 if letter == guess:
                     # Replace the "_" with letter in the word_guessed
-                    self.word_guessed = letter
+                    self.word_guessed[i] = letter
+                    
             self.num_letters -= 1
+            
 
         else: 
             self.num_lives -= 1
             print(f"Sorry, {guess} is not in the word.")
             print(f"You have {self.num_lives} lives left.")
-
-
-
+            print(f"word guessed: {self.word_guessed}")
+            
+            
 
     
     def ask_for_input(self):
@@ -79,31 +81,32 @@ class Hangman:
                 # handle the logic here
                 self.check_guess(guess)
                 self.list_of_guesses.append(guess) # add the guess to the list of guesses
-
-    def play_game(self, word_list):
-        '''
-        This function plays the game.
-        if the number of lives is 0, that means that the has lost the game.
-        if the number of lettters is greater than 0, keep asking the user for the input
-        if the number of lives is not 0 and the number of letters is not greater than 0, that means that the user has won the game.
-
-        Parameters:
-            @param word_list: a list of words to choose from
-        '''
-        game = Hangman(word_list, num_lives=5)
-        while True:
-            if self.num_lives == 0:
-                print("You lost!")
                 break
-            elif self.num_letters > 0:
-                self.ask_for_input()
-            else:
-                print("You won!")
-                break
+
+def play_game(word_list): # function -- this is like being external to the class
+    '''
+    This function plays the game.
+    if the number of lives is 0, that means that the has lost the game.
+    if the number of lettters is greater than 0, keep asking the user for the input
+    if the number of lives is not 0 and the number of letters is not greater than 0, that means that the user has won the game.
+
+    Parameters:
+        @param word_list: a list of words to choose from
+    '''
+    game = Hangman(word_list, num_lives=5)
+    while True:
+        # print(f"debugging: {game.num_letters}, and {game.num_lives}")
+        if game.num_lives == 0:
+            print("You lost!")
+            break
+        elif game.num_letters > 0:
+            game.ask_for_input()
+        else:
+            print("You won!")
+            break
 
 # Create a list of words and pass it to the Hangman class
 # Call the play_game method                
-word_list = ['apple', 'banana']
-game = Hangman(word_list, num_lives=5)
-game.play_game(word_list)
+word_list = ['apple', 'peach', 'cherry']
+play_game(word_list) # this is just a function 
 
